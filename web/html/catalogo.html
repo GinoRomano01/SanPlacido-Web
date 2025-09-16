@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo de Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/web/css/catalogo.css">
+  <style>
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+    nav.navbar {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ✅ MENÚ RESPONSIVO -->
+<nav class="navbar navbar-expand-lg   header">
+  <div class="container-fluid encabezado">
+    <a class="navbar-brand" href="/web/html/catalogo.html">SanPlacido</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/web/index.html">Inicio</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+            Ofertas
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ofertas Especiles</a></li>
+            <li><a class="dropdown-item" href="#">Descuentos</a></li>
+            
+            <li><a class="dropdown-item" href="#">Codigo de promocion</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link position-relative" href="#" id="btnCarrito">
+                <span class="bi bi-cart" style="font-size: 1.5rem;"></span>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cantidadCarrito">
+                    0
+                </span>
+            </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ✅ CONTENIDO -->
+<div class="container mt-4">
+  <h1 class="mb-4 text-center">Catálogo de Productos</h1>
+
+  <!-- ✅ FILTROS Y BÚSQUEDA -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <input type="text" id="busqueda" class="form-control" placeholder="Buscar producto...">
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <select id="filtroCategoria" class="form-select">
+            <option value="">Todas las categorías</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select id="filtroTipoProducto" class="form-select">
+            <option value="">Todos los tipos</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select id="filtroMadera" class="form-select">
+            <option value="">Todas las maderas</option>
+            </select>
+        </div>
+        <div class="col-md-3">
+            <select id="filtroAcabado" class="form-select">
+            <option value="">Todos los acabados</option>
+            </select>
+        </div>
+    </div>
+
+  <!-- ✅ CONTENEDOR DE PRODUCTOS -->
+  <div id="productos" class="row"></div>
+
+  <!-- ✅ PAGINACIÓN -->
+  <nav>
+    <ul id="paginacion" class="pagination justify-content-center mt-4"></ul>
+  </nav>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="sidebarCarrito" aria-labelledby="sidebarCarritoLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebarCarritoLabel">Carrito de Compras</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body" id="contenidoCarrito">
+    <p>Tu carrito está vacío.</p>
+  </div>
+</div>
+
+<!-- ✅ BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById("btnCarrito").addEventListener("click", () => {
+  const offcanvasCarrito = new bootstrap.Offcanvas(document.getElementById("sidebarCarrito"));
+  offcanvasCarrito.show();
+});
+
+// Ejemplo de agregar productos al carrito
+let carrito = [];
+
+function agregarCarrito(idProducto) {
+  const producto = productos.find(p => p.id === idProducto);
+  if (producto) carrito.push(producto);
+  actualizarCarrito();
+}
+
+function actualizarCarrito() {
+  const cont = document.getElementById("contenidoCarrito");
+  const badge = document.getElementById("cantidadCarrito");
+  badge.textContent = carrito.length;
+
+  if (carrito.length === 0) {
+    cont.innerHTML = "<p>Tu carrito está vacío.</p>";
+  } else {
+    cont.innerHTML = carrito.map(p => `
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span>${p.nombredelProducto}</span>
+        <span>$${p.precioUnitario}</span>
+      </div>
+    `).join('');
+  }
+}
+</script>
+<!-- ✅ SCRIPT PRINCIPAL -->
+<script>
+const API_PRODUCTOS = "http://localhost:5038/api/Producto";
+const endpoints = {
+  categoria: "http://localhost:5038/api/DetallesProducto/categorias",
+  tipoProducto: "http://localhost:5038/api/DetallesProducto/tiposproducto",
+  madera: "http://localhost:5038/api/DetallesProducto/tiposmadera",
+  acabado: "http://localhost:5038/api/DetallesProducto/tiposacabado"
+};
+
+let productos = [];
+const pageSize = 15;
+let paginaActual = 1;
+let filtradosGlobal = [];
+
+// ✅ Cargar filtros dinámicamente
+async function cargarFiltros() {
+  for (const [id, url] of Object.entries(endpoints)) {
+    try {
+      const datos = await fetch(url).then(res => res.json());
+      const select = document.querySelector(`#filtro${capitalizar(id)}`);
+      datos.forEach(d => {
+        const option = document.createElement("option");
+        option.value = d.nombre; // Se filtra por nombre
+        option.textContent = d.nombre;
+        select.appendChild(option);
+      });
+    } catch (err) {
+      console.error(`Error cargando ${id}:`, err);
+    }
+  }
+}
+
+// ✅ Cargar productos desde la API
+async function cargarProductos() {
+  try {
+    const resp = await fetch(API_PRODUCTOS);
+    if (!resp.ok) throw new Error("Error al obtener productos");
+    productos = await resp.json();
+    aplicarFiltros(); // Inicialmente mostramos todo
+  } catch (err) {
+    console.error(err);
+    document.getElementById("productos").innerHTML = `
+      <div class="col-12">
+        <div class="alert alert-danger">No se pudieron cargar los productos.</div>
+      </div>`;
+  }
+}
+
+// ✅ Aplicar filtros y búsqueda
+function aplicarFiltros() {
+  const texto = document.getElementById("busqueda").value.toLowerCase();
+  const categoria = document.getElementById("filtroCategoria").value;
+  const tipo = document.getElementById("filtroTipoProducto").value;
+  const madera = document.getElementById("filtroMadera").value;
+  const acabado = document.getElementById("filtroAcabado").value;
+
+  let filtrados = productos.filter(p =>
+    p.nombredelProducto.toLowerCase().includes(texto) &&
+    (categoria === "" || p.categoria === categoria) &&
+    (tipo === "" || p.tipoProducto === tipo) &&
+    (madera === "" || p.tipoMadera === madera) &&
+    (acabado === "" || p.tipoAcabado === acabado)
+  );
+
+  filtradosGlobal = filtrados;
+  mostrarPagina(1, filtrados);
+}
+
+// ✅ Mostrar productos paginados
+function mostrarPagina(pagina, lista = productos) {
+  paginaActual = pagina;
+  const inicio = (pagina - 1) * pageSize;
+  const fin = inicio + pageSize;
+  const productosPagina = lista.slice(inicio, fin);
+
+  const contenedor = document.getElementById("productos");
+  contenedor.innerHTML = "";
+  if (productosPagina.length === 0) {
+    contenedor.innerHTML = `<div class="col-12 text-center"><p>No se encontraron productos</p></div>`;
+  } else {
+    productosPagina.forEach(p => {
+    contenedor.innerHTML += `
+        <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <img src="${p.urlImagen}" class="card-img-top" alt="${p.nombredelProducto}">
+            <div class="card-body d-flex flex-column">
+            <h5 class="card-title">${p.nombredelProducto}</h5>
+            <p class="card-text">
+                <b>Precio:</b> $${p.precioUnitario}<br>
+                <b>Categoría:</b> ${p.categoria}<br>
+                <b>Dimensiones:</b> ${p.largo} x ${p.ancho} x ${p.alto}<br>
+                <b>Tipo:</b> ${p.tipoProducto} - ${p.tipoMadera} - ${p.tipoAcabado}
+            </p>
+            <div class="mt-auto d-flex justify-content-between">
+                <button class="btn btn-primary" onclick="verMas(${p.id})">Ver más</button>
+                <button class="btn btn-success" onclick="agregarCarrito(${p.id})">Agregar al carrito</button>
+            </div>
+            </div>
+        </div>
+        </div>`;
+    });
+  }
+
+  // ✅ Paginación
+  const totalPaginas = Math.ceil(lista.length / pageSize);
+  let pagHtml = "";
+  for (let i = 1; i <= totalPaginas; i++) {
+    pagHtml += `<li class="page-item ${i === pagina ? "active" : ""}">
+                  <a class="page-link" href="#" onclick="mostrarPagina(${i}, filtradosGlobal)">${i}</a>
+                </li>`;
+  }
+  document.getElementById("paginacion").innerHTML = pagHtml;
+}
+
+// ✅ Capitalizar para IDs dinámicos
+function capitalizar(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// ✅ Listeners para filtros y búsqueda
+document.getElementById("busqueda").addEventListener("input", aplicarFiltros);
+document.getElementById("filtroCategoria").addEventListener("change", aplicarFiltros);
+document.getElementById("filtroTipoProducto").addEventListener("change", aplicarFiltros);
+document.getElementById("filtroMadera").addEventListener("change", aplicarFiltros);
+document.getElementById("filtroAcabado").addEventListener("change", aplicarFiltros);
+
+// ✅ Inicializar
+document.addEventListener("DOMContentLoaded", async () => {
+  await cargarFiltros();
+  await cargarProductos();
+});
+</script>
+</body>
+</html>

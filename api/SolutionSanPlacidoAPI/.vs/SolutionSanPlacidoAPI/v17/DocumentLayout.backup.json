@@ -1,0 +1,293 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|solutionrelative:sanplacidoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|solutionrelative:sanplacidoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidoapi\\controllers\\validarlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|solutionrelative:sanplacidoapi\\controllers\\validarlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidoapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|solutionrelative:sanplacidoapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidodata\\clienteusuariodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|solutionrelative:sanplacidodata\\clienteusuariodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidomodelo\\cargarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|solutionrelative:sanplacidomodelo\\cargarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidoapi\\controllers\\detallesproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|solutionrelative:sanplacidoapi\\controllers\\detallesproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidodata\\productosdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|solutionrelative:sanplacidodata\\productosdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidomodelo\\productocondetalles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|solutionrelative:sanplacidomodelo\\productocondetalles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidodata\\detallesdeproductodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|solutionrelative:sanplacidodata\\detallesdeproductodata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidomodelo\\editarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|solutionrelative:sanplacidomodelo\\editarproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidomodelo\\editarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|solutionrelative:sanplacidomodelo\\editarusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidomodelo\\tipodeacabado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|solutionrelative:sanplacidomodelo\\tipodeacabado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidodata\\usuariosdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|solutionrelative:sanplacidodata\\usuariosdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidodata\\localidaddni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47D1A98B-F934-469C-A0B0-2A5A33E40742}|SanPlacidoDATA\\SanPlacidoDATA.csproj|solutionrelative:sanplacidodata\\localidaddni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidomodelo\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D096CDB-A8F0-4746-A7F9-BADA512D7A3F}|SanPlacidoModelo\\SanPlacidoModelo.csproj|solutionrelative:sanplacidomodelo\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|c:\\users\\pcb-260\\desktop\\api sanplacido\\api\\solutionsanplacidoapi\\sanplacidoapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A5523FB-7D53-4F61-8A02-11FC43F16DB2}|SanPlacidoAPI\\SanPlacidoAPI.csproj|solutionrelative:sanplacidoapi\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CargarProducto.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\CargarProducto.cs",
+              "RelativeDocumentMoniker": "SanPlacidoModelo\\CargarProducto.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\CargarProducto.cs",
+              "RelativeToolTip": "SanPlacidoModelo\\CargarProducto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T18:03:52.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClienteUsuarioData.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\ClienteUsuarioData.cs",
+              "RelativeDocumentMoniker": "SanPlacidoDATA\\ClienteUsuarioData.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\ClienteUsuarioData.cs",
+              "RelativeToolTip": "SanPlacidoDATA\\ClienteUsuarioData.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAADwvz8AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T00:24:49.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "SanPlacidoAPI\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "SanPlacidoAPI\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAcwEkAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:40:37.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ValidarLoginController.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\ValidarLoginController.cs",
+              "RelativeDocumentMoniker": "SanPlacidoAPI\\Controllers\\ValidarLoginController.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\ValidarLoginController.cs",
+              "RelativeToolTip": "SanPlacidoAPI\\Controllers\\ValidarLoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T01:38:01.247Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "SanPlacidoAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\appsettings.json",
+              "RelativeToolTip": "SanPlacidoAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-13T22:11:46.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Program.cs",
+              "RelativeDocumentMoniker": "SanPlacidoAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Program.cs",
+              "RelativeToolTip": "SanPlacidoAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-03T00:10:40.415Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DetallesProductoController.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\DetallesProductoController.cs",
+              "RelativeDocumentMoniker": "SanPlacidoAPI\\Controllers\\DetallesProductoController.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\DetallesProductoController.cs",
+              "RelativeToolTip": "SanPlacidoAPI\\Controllers\\DetallesProductoController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAwB4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T19:05:12.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductosData.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\ProductosData.cs",
+              "RelativeDocumentMoniker": "SanPlacidoDATA\\ProductosData.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\ProductosData.cs",
+              "RelativeToolTip": "SanPlacidoDATA\\ProductosData.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAiwMsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:35:47.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "productocondetalles.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\productocondetalles.cs",
+              "RelativeDocumentMoniker": "SanPlacidoModelo\\productocondetalles.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\productocondetalles.cs",
+              "RelativeToolTip": "SanPlacidoModelo\\productocondetalles.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA0wBUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T17:38:17.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "editarproducto.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\editarproducto.cs",
+              "RelativeDocumentMoniker": "SanPlacidoModelo\\editarproducto.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\editarproducto.cs",
+              "RelativeToolTip": "SanPlacidoModelo\\editarproducto.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwBsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T20:48:23.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DetallesdeProductoData.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\DetallesdeProductoData.cs",
+              "RelativeDocumentMoniker": "SanPlacidoDATA\\DetallesdeProductoData.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\DetallesdeProductoData.cs",
+              "RelativeToolTip": "SanPlacidoDATA\\DetallesdeProductoData.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA0wAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T18:55:56.053Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EditarUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\EditarUsuario.cs",
+              "RelativeDocumentMoniker": "SanPlacidoModelo\\EditarUsuario.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\EditarUsuario.cs",
+              "RelativeToolTip": "SanPlacidoModelo\\EditarUsuario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T22:42:15.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TipodeAcabado.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\TipodeAcabado.cs",
+              "RelativeDocumentMoniker": "SanPlacidoModelo\\TipodeAcabado.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\TipodeAcabado.cs",
+              "RelativeToolTip": "SanPlacidoModelo\\TipodeAcabado.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-20T18:54:36.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\Usuario.cs",
+              "RelativeDocumentMoniker": "SanPlacidoModelo\\Usuario.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoModelo\\Usuario.cs",
+              "RelativeToolTip": "SanPlacidoModelo\\Usuario.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA4wA4AAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T20:29:41.114Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LocalidadDni.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\LocalidadDni.cs",
+              "RelativeDocumentMoniker": "SanPlacidoDATA\\LocalidadDni.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\LocalidadDni.cs",
+              "RelativeToolTip": "SanPlacidoDATA\\LocalidadDni.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA5wCsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T20:55:07.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UsuariosData.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\UsuariosData.cs",
+              "RelativeDocumentMoniker": "SanPlacidoDATA\\UsuariosData.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoDATA\\UsuariosData.cs",
+              "RelativeToolTip": "SanPlacidoDATA\\UsuariosData.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T20:43:38.17Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "SanPlacidoAPI\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\PCB-260\\Desktop\\api SanPLacido\\api\\SolutionSanPlacidoAPI\\SanPlacidoAPI\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "SanPlacidoAPI\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAADwvwgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-15T20:42:40.872Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

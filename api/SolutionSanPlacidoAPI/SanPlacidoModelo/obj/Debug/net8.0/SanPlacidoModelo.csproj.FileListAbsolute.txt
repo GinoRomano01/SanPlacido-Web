@@ -1,0 +1,11 @@
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\bin\Debug\net8.0\SanPlacidoModelo.deps.json
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\bin\Debug\net8.0\SanPlacidoModelo.dll
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\bin\Debug\net8.0\SanPlacidoModelo.pdb
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\SanPlacidoModelo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\SanPlacidoModelo.AssemblyInfoInputs.cache
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\SanPlacidoModelo.AssemblyInfo.cs
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\SanPlacidoModelo.csproj.CoreCompileInputs.cache
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\SanPlacidoModelo.dll
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\refint\SanPlacidoModelo.dll
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\SanPlacidoModelo.pdb
+C:\Users\PCB-260\Desktop\api SanPLacido\api\SolutionSanPlacidoAPI\SanPlacidoModelo\obj\Debug\net8.0\ref\SanPlacidoModelo.dll

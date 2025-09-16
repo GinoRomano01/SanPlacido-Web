@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/web/css/login.css">
+    <title>Iniciar Sesion</title>
+</head>
+
+    
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6 formulario">
+                
+                    
+                        <input type="text" placeholder="Usuario" class="recuadro" id="NombredeUsuario">
+                        <div class="password-container">
+                            <input type="password" id="contrasena" placeholder="Contraseña" class="recuadro">
+                            <button type="button" id="togglePassword">👁</button>
+                        </div>
+                        <button onclick="login()" class="boton">Iniciar Sesion</button>
+                        <p><a href="/web/html/registro.html" class="recuperar">¿no tenes Cuenta? REGISTRATE</a></p>
+                        <p><a href="/html/registro.html" class="recuperar">¿Olvidaste tu Contraseña?</a></p>
+                        
+                    
+                    
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const togglePassword = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("contrasena");
+
+    
+
+    togglePassword.addEventListener("click", function () {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            togglePassword.textContent = "🙈"; // Cambia icono a "ocultar"
+        } else {
+            passwordInput.type = "password";
+            togglePassword.textContent = "👁"; // Cambia icono a "mostrar"
+        }
+    });
+
+    async function login() {
+        const datos = {
+            NombredeUsuario: document.getElementById("NombredeUsuario").value,
+            contrasena: document.getElementById("contrasena").value
+        };
+
+        try {
+            const response = await fetch("http://localhost:5038/api/ValidarLogin", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datos)
+            });
+
+            if (!response.ok) {
+            // Manejo de errores HTTP
+            const errorData = await response.json();
+            alert(errorData.message || "Error en el login");
+            return;
+            }
+
+            const resultado = await response.json();
+
+            if (resultado.success) {
+            alert("✅ Login exitoso");
+            // Redirigir a otra página
+            window.location.href = "../index.html";  // Cambiá por la ruta que quieras
+            } else {
+            alert("❌ Usuario o contraseña incorrectos");
+            }
+        } catch (error) {
+            console.error("Error en la solicitud:", error);
+            alert("Error de conexión con el servidor");
+        }
+    }
+       
+
+       
+</script>

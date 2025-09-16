@@ -1,0 +1,16 @@
+.card-img-top{
+    border-radius: 6px;
+    color: #000;
+}
+.header{
+    background-color: rgba(255, 212, 212, 0.5);
+    padding-right: 20px ;
+    padding-top: 25px;
+    border-radius: 4px;
+    
+}
+.encabezado{
+   padding-left: 15px ;
+   
+   
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Cliente-Usuario</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(180deg, #e0f7ea, #c7f0dc);
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #008d5e;
+    }
+
+    .form-container input,
+    .form-container select {
+      margin-bottom: 15px;
+      height: 45px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 0 10px;
+      width: 100%;
+    }
+
+    .form-container button {
+      width: 100%;
+      background-color: #0ae3f3;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .form-container button:hover {
+      background-color: #198a8f;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <!-- PARTE 1: CLIENTE -->
+    <div id="formCliente">
+      <h2>Ingresa Tus Datos</h2>
+      <input id="dni" placeholder="DNI">
+      <select name="tipodedni" id="idTipoDni"></select>
+      <input id="nombre" placeholder="Nombre">
+      <input id="apellido" placeholder="Apellido">
+      <input id="telefono" placeholder="Teléfono">
+      <select name="localidad" id="idLocalidad"></select>
+      <input id="calle" placeholder="Calle">
+      <input id="numero" type="number" placeholder="Número">
+      
+      
+      <button onclick="guardarCliente()">Siguiente</button>
+    </div>
+
+    <!-- PARTE 2: USUARIO (oculto al principio) -->
+    <div id="formUsuario" style="display:none;">
+      <h2>Registra tu cuenta</h2>
+      <input id="usuario" placeholder="Usuario">
+      <input id="correo" placeholder="Correo electrónico">
+      <input id="contraseña" type="password" placeholder="Contraseña">
+      <input id="confirmar" type="password" placeholder="Confirmar contraseña">
+      <button onclick="registrarClienteUsuario()">Registrar</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  
+
+  <script>
+
+    async function cargarSelects() {
+  // Localidades
+    const resLoc = await fetch("http://localhost:5038/api/Localidad");
+    const localidades = await resLoc.json();
+    const selLoc = document.getElementById("idLocalidad");
+    localidades.forEach(l => {
+        const opt = document.createElement("option");
+        opt.value = l.id;
+        opt.textContent = l.nombre;
+        selLoc.appendChild(opt);
+    });
+
+    // Tipos de DNI
+    const resDni = await fetch("http://localhost:5038/api/TipodeDni");
+    const tipos = await resDni.json();
+    const selDni = document.getElementById("idTipoDni");
+    tipos.forEach(t => {
+        const opt = document.createElement("option");
+        opt.value = t.id;
+        opt.textContent = t.nombre;
+        selDni.appendChild(opt);
+    });
+    }
+
+    window.onload = cargarSelects;
+
+
+
+
+    // Paso 1: Guardar datos del cliente en localStorage
+    function guardarCliente() {
+      const cliente = {
+        dni: document.getElementById("dni").value,
+        nombre: document.getElementById("nombre").value,
+        apellido: document.getElementById("apellido").value,
+        telefono: document.getElementById("telefono").value,
+        calle: document.getElementById("calle").value,
+        numero: parseInt(document.getElementById("numero").value),
+        idLocalidad: parseInt(document.getElementById("idLocalidad").value),
+        idTipoDni: parseInt(document.getElementById("idTipoDni").value)
+      };
+
+      // Guardar en localStorage
+      localStorage.setItem("clienteTemp", JSON.stringify(cliente));
+
+      // Ocultar form cliente y mostrar form usuario
+      document.getElementById("formCliente").style.display = "none";
+      document.getElementById("formUsuario").style.display = "block";
+    }
+
+    // Paso 2: Registrar usuario + cliente
+    async function registrarClienteUsuario() {
+      const cliente = JSON.parse(localStorage.getItem("clienteTemp"));
+      if (!cliente) {
+        alert("No hay datos de cliente, vuelva a iniciar el registro.");
+        return;
+      }
+
+      const pass = document.getElementById("contraseña").value;
+      const confirmar = document.getElementById("confirmar").value;
+      if (pass !== confirmar) {
+        alert("Las contraseñas no coinciden.");
+        return;
+      }
+
+      const usuario = {
+        nombredeUsuario: document.getElementById("usuario").value,
+        contraseña: pass,
+        correoElectronico: document.getElementById("correo").value,
+        idTipoUsuario: 2,
+        idTipodeRol: 2,
+        idCliente: 0
+      };
+
+      const dto = {
+        cliente: cliente,
+        usuario: usuario
+      };
+
+      try {
+        const response = await fetch("http://localhost:5038/api/ClienteUsuario", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dto)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          alert("❌ Error: " + (data.detalle || data.mensaje));
+          return;
+        }
+
+        alert("✔ " + data.mensaje + " (IdCliente: " + data.idCliente + ")");
+        localStorage.removeItem("clienteTemp"); // borrar si todo está OK
+        window.location.href = "login.html";
+      } catch (err) {
+        console.error("Error de red:", err);
+        alert("Error al registrar, intente nuevamente.");
+      }
+    }
+  </script>
+</body>
+</html>

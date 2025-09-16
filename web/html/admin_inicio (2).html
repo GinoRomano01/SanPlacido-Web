@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - San Plácido</title>
+  <link rel="stylesheet" href="/web/css/AdminInicioStyle (2).css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <script defer>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".menu li");
+      items.forEach(item => {
+        item.addEventListener("click", () => {
+          items.forEach(i => i.classList.remove("activo"));
+          item.classList.add("activo");
+        });
+      });
+
+      const menuItems = document.querySelectorAll(".menu-item");
+      menuItems.forEach(menu => {
+        menu.addEventListener("click", () => menu.classList.toggle("active"));
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">San Plácido</div>
+    <ul class="menu">
+      <li onclick="mostrarSeccion('inicio')">Inicio</li>
+      
+      <li class="menu-item">
+        <div class="icon">🛒 Ventas</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('lista-ventas')">Lista de Ventas</li>
+          <li onclick="mostrarSeccion('orden-compra')">Orden de Compra</li>
+          <li onclick="mostrarSeccion('carritos-abandonados')">Carritos Abandonados</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <div class="icon">📦 Producto</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('lista-productos')">Lista de Productos</li>
+          <li onclick="mostrarSeccion('inventario')">Inventario</li>
+          <li onclick="mostrarSeccion('categorias')">Categorías</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <div class="icon">💳 Cobros</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('debito')">Débito automático</li>
+          <li onclick="mostrarSeccion('transferencia')">Transferencia/Depósito</li>
+          <li onclick="mostrarSeccion('mercado-pago')">Mercado Pago</li>
+        </ul>
+      </li>
+
+      <!-- Aquí agrego los nuevos items que me pediste -->
+      <li class="menu-item">
+        <div class="icon">👥 Clientes</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('lista-clientes')">Lista de Clientes</li>
+          <li onclick="mostrarSeccion('mensajeria')">Mensajería</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <div class="icon">🏷️ Descuento</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('cupones')">Cupones</li>
+          <li onclick="mostrarSeccion('promociones')">Promociones</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <div class="icon">🏪 Punto de Venta</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('retiro-sucursal')">Retiro por Sucursal</li>
+          <li onclick="mostrarSeccion('envio-domicilio')">Envío a Domicilio</li>
+        </ul>
+      </li>
+      <li class="menu-item">
+        <div class="icon">📊 Estadísticas</div> 
+        <ul class="submenu">
+          <li onclick="mostrarSeccion('ventas-stats')">Ventas</li>
+          <li onclick="mostrarSeccion('clientes-stats')">Clientes</li>
+          <li onclick="mostrarSeccion('stock-stats')">Stock</li>
+          <li onclick="mostrarSeccion('visitas-stats')">Visitas</li>
+          <li onclick="mostrarSeccion('pagos-stats')">Pagos</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <section id="inicio" class="active">
+      <h2>Bienvenido a Carpintería San Plácido</h2>
+      <img src="carpinteria.jpg" alt="Carpintería San Plácido" style="max-width: 100%; border-radius: 12px;" />
+    </section>
+
+    <!-- Secciones de estadísticas -->
+    <section id="ventas-stats">
+      <h2>Estadísticas de Ventas</h2>
+      <p>Gráfico de ejemplo aquí</p>
+    </section>
+    <section id="clientes-stats">
+      <h2>Estadísticas de Clientes</h2>
+      <p>Gráfico de ejemplo aquí</p>
+    </section>
+    <section id="stock-stats">
+      <h2>Estadísticas de Stock</h2>
+      <p>Gráfico de ejemplo aquí</p>
+    </section>
+    <section id="visitas-stats">
+      <h2>Estadísticas de Visitas</h2>
+      <p>Gráfico de ejemplo aquí</p>
+    </section>
+    <section id="pagos-stats">
+      <h2>Estadísticas de Pagos</h2>
+      <p>Gráfico de ejemplo aquí</p>
+    </section>
+
+    <!-- Ventas -->
+    <section id="lista-ventas">
+      <h2>Lista de Ventas</h2>
+
+      <!-- Filtros -->
+      <div class="filtros-ventas">
+        <input
+          type="text"
+          id="buscador-ventas"
+          placeholder="Buscar por nombre, DNI o ID"
+          autocomplete="off"
+        />
+
+        <div class="filtros-rapidos">
+          <button data-rango="90">Últimos 90 días</button>
+          <button data-rango="180">Últimos 6 meses</button>
+          <button data-rango="270">Últimos 9 meses</button>
+          <button data-rango="365">Últimos 12 meses</button>
+        </div>
+
+        <div class="filtros-fechas">
+          <label>
+            Desde: <input type="date" id="fecha-desde-ventas" />
+          </label>
+          <label>
+            Hasta: <input type="date" id="fecha-hasta-ventas" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Tabla -->
+      <table id="tabla-ventas">
+        <thead>
+          <tr>
+            <th>ID Venta</th>
+            <th>Nombre Cliente</th>
+            <th>DNI Cliente</th>
+            <th>Fecha de Venta</th>
+            <th>Total Venta</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplos de filas -->
+          <tr>
+            <td>001</td>
+            <td>Juan Pérez</td>
+            <td>12345678</td>
+            <td>2025-03-10</td>
+            <td>$12.000</td>
+            <td>Pagado</td>
+            <td>
+              <button class="btn-editar" title="Editar">✏️</button>
+              <button class="btn-eliminar" title="Eliminar">🗑️</button>
+            </td>
+          </tr>
+          <tr>
+            <td>002</td>
+            <td>Laura Gómez</td>
+            <td>87654321</td>
+            <td>2025-02-28</td>
+            <td>$35.000</td>
+            <td>Pendiente</td>
+            <td>
+              <button class="btn-editar" title="Editar">✏️</button>
+              <button class="btn-eliminar" title="Eliminar">🗑️</button>
+            </td>
+          </tr>
+          <!-- Más filas aquí -->
+        </tbody>
+      </table>
+
+      <p id="mensaje-no-resultados" style="display:none; margin-top: 1em;">
+        No se encontraron ventas con esos criterios.
+      </p>
+    </section>
+    <section id="orden-compra">
+      <h2>Órdenes de Compra</h2>
+      <ul>
+        <li>Orden #001 - 10 Sillas</li>
+        <li>Orden #002 - 5 Mesas</li>
+      </ul>
+    </section>
+    <section id="carritos-abandonados">
+      <h2>Carritos Abandonados</h2>
+      <ul>
+        <li>María - 1 Mesa grande</li>
+        <li>Carlos - 2 Estanterías</li>
+      </ul>
+    </section>
+
+    <!-- Producto -->
+    <section id="lista-productos">
+        <!-- Botón para abrir modal -->
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#productoModalAgregar">Agregar Producto</button>
+
+        <!-- Tabla de productos -->
+        <div class="table-responsive">
+            <table id="tablaProductos" class="table table-striped table-bordered table-hover align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Imagen</th>
+                        <th>Precio</th>
+                        <th>Categoría</th>
+                        <th>Largo</th>
+                        <th>Ancho</th>
+                        <th>Alto</th>
+                        <th>Tipo Madera</th>
+                        <th>Acabado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- JS cargará las filas -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section id="inventario">
+      
+       
+
+        
+      
+      
+     
+    </section>
+    <section id="categorias">
+      <h2>Categorías</h2>
+      <ul>
+        <li>Sillas</li>
+        <li>Mesas</li>
+        <li>Estanterías</li>
+      </ul>
+    </section>
+
+    <!-- Pago -->
+    <section id="debito">
+      <h2>Débito automático con tarjeta</h2>
+      <form>
+        <label>Número de tarjeta: <input type="text" /></label><br />
+        <label>Titular: <input type="text" /></label><br />
+        <label>Vencimiento: <input type="month" /></label><br />
+        <label>Código de seguridad: <input type="text" /></label><br />
+        <label>Tipo de documento:
+          <select>
+            <option>DNI</option>
+            <option>Cédula</option>
+            <option>LC</option>
+            <option>LE</option>
+            <option>Otros</option>
+          </select>
+        </label>
+      </form>
+    </section>
+
+    <section id="transferencia">
+      <h2>Transferencia Bancaria / Depósito</h2>
+      <p><strong>Alias:</strong> trabajodetesis</p>
+      <p><strong>CBU:</strong> 00000000000000137928456</p>
+      <p><strong>Banco:</strong> Cualquiera</p>
+      <p><strong>Tipo de cuenta:</strong> Cuenta corriente en Pesos</p>
+      <p><strong>Número de cuenta:</strong> 8/123456/789</p>
+      <p><strong>A nombre de:</strong> San Plácido</p>
+    </section>
+
+    <section id="mercado-pago">
+      <h2>Mercado Pago</h2>
+      <p>Escaneá el QR para pagar</p>
+      <img src="qr-mercadopago.png" alt="QR Mercado Pago" style="max-width: 200px;" />
+    </section>
+
+    <!-- Clientes (MODIFICADO) -->
+    <section id="lista-clientes">
+      <h2>Lista de Clientes</h2>
+
+      <!-- Buscador y filtros -->
+      <div class="filtros-clientes" style="margin-bottom: 1em;">
+        <input id="buscador" type="text" placeholder="Buscar por ID, Documento, Nombre, Email o Teléfono" style="padding: 6px; width: 60%; margin-right: 1em;" />
+
+        <select id="filtro-rango-fecha" style="padding: 6px;">
+          <option value="">Filtrar por fecha de registro</option>
+          <option value="90">Últimos 90 días</option>
+          <option value="180">Últimos 6 meses</option>
+          <option value="270">Últimos 9 meses</option>
+          <option value="365">Últimos 12 meses</option>
+        </select>
+
+        <label style="margin-left: 1em;">
+          Desde: <input type="date" id="fecha-desde" />
+        </label>
+        <label style="margin-left: 1em;">
+          Hasta: <input type="date" id="fecha-hasta" />
+        </label>
+      </div>
+
+      <!-- Tabla -->
+      <table id="tabla-clientes" border="1" cellspacing="0" cellpadding="6" style="width: 100%; border-collapse: collapse;">
+        <thead style="background-color: #eee;">
+          <tr>
+            <th>ID</th>
+            <th>Número de Documento</th>
+            <th>Nombre Completo</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Fecha de Registro</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplos de clientes -->
+          <tr>
+            <td>1</td>
+            <td>12345678</td>
+            <td>Juan Pérez</td>
+            <td>juan.perez@mail.com</td>
+            <td>+54 9 351 1234567</td>
+            <td>Calle Falsa 123</td>
+            <td>2025-03-15</td>
+            <td>Activo</td>
+            <td>
+              <button onclick="alert('Editar cliente 1')">Editar</button>
+              <button onclick="alert('Eliminar cliente 1')">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>87654321</td>
+            <td>Laura Gómez</td>
+            <td>laura.gomez@mail.com</td>
+            <td>+54 9 351 7654321</td>
+            <td>Avenida Siempre Viva 742</td>
+            <td>2024-12-01</td>
+            <td>Activo</td>
+            <td>
+              <button onclick="alert('Editar cliente 2')">Editar</button>
+              <button onclick="alert('Eliminar cliente 2')">Eliminar</button>
+            </td>
+          </tr>
+          <!-- Más filas aquí -->
+        </tbody>
+      </table>
+
+      <script>
+        (() => {
+          const buscador = document.getElementById('buscador');
+          const filtroRangoFecha = document.getElementById('filtro-rango-fecha');
+          const fechaDesde = document.getElementById('fecha-desde');
+          const fechaHasta = document.getElementById('fecha-hasta');
+          const tabla = document.getElementById('tabla-clientes');
+          const tbody = tabla.tBodies[0];
+
+          function filtro() {
+            const texto = buscador.value.toLowerCase();
+            const rangoDias = filtroRangoFecha.value;
+            const desde = fechaDesde.value ? new Date(fechaDesde.value) : null;
+            const hasta = fechaHasta.value ? new Date(fechaHasta.value) : null;
+            const hoy = new Date();
+
+            for (const fila of tbody.rows) {
+              const id = fila.cells[0].textContent.toLowerCase();
+              const documento = fila.cells[1].textContent.toLowerCase();
+              const nombre = fila.cells[2].textContent.toLowerCase();
+              const email = fila.cells[3].textContent.toLowerCase();
+              const telefono = fila.cells[4].textContent.toLowerCase();
+              const fechaRegistroText = fila.cells[6].textContent;
+              const fechaRegistro = new Date(fechaRegistroText);
+
+              // Buscar por ID, documento, nombre, email o teléfono
+              const textoCoincide =
+                id.includes(texto) ||
+                documento.includes(texto) ||
+                nombre.includes(texto) ||
+                email.includes(texto) ||
+                telefono.includes(texto);
+
+              // Filtrar por rango predefinido
+              let rangoValido = true;
+              if (rangoDias) {
+                const dias = parseInt(rangoDias);
+                const fechaLimite = new Date();
+                fechaLimite.setDate(hoy.getDate() - dias);
+                rangoValido = fechaRegistro >= fechaLimite;
+              }
+
+              // Filtrar por fechas personalizadas
+              let fechaValida = true;
+              if (desde && fechaRegistro < desde) fechaValida = false;
+              if (hasta && fechaRegistro > hasta) fechaValida = false;
+
+              fila.style.display = (textoCoincide && rangoValido && fechaValida) ? '' : 'none';
+            }
+          }
+
+          buscador.addEventListener('input', filtro);
+          filtroRangoFecha.addEventListener('change', () => {
+            // Limpiar fechas personalizadas si cambia rango predefinido
+            fechaDesde.value = '';
+            fechaHasta.value = '';
+            filtro();
+          });
+          fechaDesde.addEventListener('change', () => {
+            // Limpiar rango predefinido si usa fecha personalizada
+            filtroRangoFecha.value = '';
+            filtro();
+          });
+          fechaHasta.addEventListener('change', () => {
+            filtroRangoFecha.value = '';
+            filtro();
+          });
+        })();
+      </script>
+    </section>
+
+    <!-- Mensajería -->
+    <section id="mensajeria">
+      <h2>Mensajería</h2>
+      <p>En construcción...</p>
+    </section>
+
+    <!-- Cupones -->
+    <section id="cupones">
+      <h2>Cupones</h2>
+      <p>En construcción...</p>
+    </section>
+
+    <!-- Promociones -->
+    <section id="promociones">
+      <h2>Promociones</h2>
+      <p>En construcción...</p>
+    </section>
+
+    <!-- Retiro por sucursal -->
+    <section id="retiro-sucursal">
+      <h2>Retiro por Sucursal</h2>
+      <p>En construcción...</p>
+    </section>
+
+    <!-- Envío a domicilio -->
+    <section id="envio-domicilio">
+      <h2>Envío a Domicilio</h2>
+      <p>En construcción...</p>
+    </section>
+  </div>
+
+
+
+        <!-- Modal AGREGAR -->
+        <div class="modal fade" id="productoModalAgregar" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productoModalLabel">Agregar Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProducto">
+                            <div class="row g-2">
+                                <div class="col-md-6">
+                                    <input type="text" id="nombreAgregar" class="form-control mb-2" placeholder="Nombre del producto">
+                                    <input type="number" id="precioAgregar" class="form-control mb-2" placeholder="Precio">
+                                    <select id="categoriaAgregar" class="form-select mb-2"></select>
+                                    <select id="tipoProductoAgregar" class="form-select mb-2"></select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select id="maderaAgregar" class="form-select mb-2"></select>
+                                    <select id="acabadoAgregar" class="form-select mb-2"></select>
+                                    <input type="number" id="largoAgregar" class="form-control mb-2" placeholder="Largo">
+                                    <input type="number" id="anchoAgregar" class="form-control mb-2" placeholder="Ancho">
+                                    <input type="number" id="altoAgregar" class="form-control mb-2" placeholder="Alto">
+                                    <input type="file" id="imagenAgregar" class="form-control mb-2">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-success mt-2" onclick="guardarProducto()">Guardar Producto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal EDITAR -->
+       <!-- Modal Editar Producto -->
+        <div class="modal fade" id="productoModalEditar" tabindex="-1" aria-labelledby="productoModalEditarLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProductoEditar">
+                            <input type="hidden" id="idEditar">
+                            <input type="hidden" id="idDetallesdeProductoEditar">
+
+                            <div class="mb-3">
+                                <label for="nombreEditar" class="form-label">Nombre del Producto</label>
+                                <input type="text" class="form-control" id="nombreEditar">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tipoProductoEditar" class="form-label">Tipo de Producto</label>
+                                <select class="form-select" id="tipoProductoEditar"></select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="precioEditar" class="form-label">Precio</label>
+                                <input type="number" class="form-control" id="precioEditar">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="categoriaEditar" class="form-label">Categoría</label>
+                                <select class="form-select" id="categoriaEditar"></select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="imagenEditar" class="form-label">Imagen (opcional)</label>
+                                <input type="file" class="form-control" id="imagenEditar" accept="image/*">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Preview de imagen</label>
+                                <img id="imagenPreviewEditar" src="" class="img-fluid">
+                            </div>
+
+                            <div class="d-flex gap-2 mb-3">
+                                <div>
+                                    <label for="largoEditar">Largo</label>
+                                    <input type="number" class="form-control" id="largoEditar">
+                                </div>
+                                <div>
+                                    <label for="anchoEditar">Ancho</label>
+                                    <input type="number" class="form-control" id="anchoEditar">
+                                </div>
+                                <div>
+                                    <label for="altoEditar">Alto</label>
+                                    <input type="number" class="form-control" id="altoEditar">
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="maderaEditar" class="form-label">Tipo de Madera</label>
+                                <select class="form-select" id="maderaEditar"></select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="acabadoEditar" class="form-label">Acabado</label>
+                                <select class="form-select" id="acabadoEditar"></select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick="guardarActualizacionProducto()">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Cloudinary
+    const CLOUD_NAME = "dmayq2mna";
+    const UPLOAD_PRESET = "ml_default";
+
+    // 🔹 Cargar opciones en los selects (para ambos modales)
+    async function cargarSelects() {
+        const endpoints = {
+            categoria: "http://localhost:5038/api/DetallesProducto/categorias",
+            tipoProducto: "http://localhost:5038/api/DetallesProducto/tiposproducto",
+            madera: "http://localhost:5038/api/DetallesProducto/tiposmadera",
+            acabado: "http://localhost:5038/api/DetallesProducto/tiposacabado"
+        };
+
+        for (const [id, url] of Object.entries(endpoints)) {
+            const datos = await fetch(url).then(res => res.json());
+            
+            // Cargar en ambos modales
+            document.querySelectorAll(`#${id}Agregar, #${id}Editar`).forEach(select => {
+                select.innerHTML = ""; // Limpia antes de llenar
+                datos.forEach(d => {
+                    const option = document.createElement("option");
+                    option.value = d.id;
+                    option.textContent = d.nombre;
+                    select.appendChild(option);
+                });
+            });
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", async () => {
+        await cargarSelects();
+        cargarProductosTabla();
+    });
+
+    // ✅ Guardar producto (modal Agregar)
+    async function guardarProducto() {
+    const file = document.getElementById("imagenAgregar").files[0];
+    if (!file) return alert("Debes seleccionar una imagen.");
+
+    // Subir imagen a Cloudinary
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", UPLOAD_PRESET);
+
+    const resCloud = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+        method: "POST",
+        body: formData
+    });
+    const cloudData = await resCloud.json();
+    const urlImagen = cloudData.secure_url;
+
+    const dto = {
+        nombredelProducto: document.getElementById("nombreAgregar").value,
+        urlImagen: urlImagen,
+        precioUnitario: parseFloat(document.getElementById("precioAgregar").value),
+        idCategoria: parseInt(document.getElementById("categoriaAgregar").value),
+        ancho: parseFloat(document.getElementById("anchoAgregar").value),
+        largo: parseFloat(document.getElementById("largoAgregar").value),
+        alto: parseFloat(document.getElementById("altoAgregar").value),
+        idTipodeProducto: parseInt(document.getElementById("tipoProductoAgregar").value),
+        idTipodeMadera: parseInt(document.getElementById("maderaAgregar").value),
+        idTipodeAcabado: parseInt(document.getElementById("acabadoAgregar").value)
+    };
+
+    const resApi = await fetch("http://localhost:5038/api/Producto", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dto)
+    });
+
+    if (!resApi.ok) {
+        const err = await resApi.text();
+        return alert("Error al guardar producto: " + err);
+    }
+
+    alert("✅ Producto guardado correctamente");
+    cargarProductosTabla();
+    document.getElementById("formProducto").reset();
+
+    // Cerrar modal usando Bootstrap
+    /*const modalAgregar = bootstrap.Modal.getInstance(document.getElementById('productoModalAgregar'));
+    modalAgregar.hide(); */
+}
+
+    // ✅ Cargar productos en tabla
+    // 🔹 Cargar la tabla de productos
+    // 🔹 Función para cargar la tabla de productos
+    async function cargarProductosTabla() {
+        try {
+            const response = await fetch('http://localhost:5038/api/Producto');
+            if (!response.ok) throw new Error(`Error al obtener los productos: ${response.status}`);
+
+            const productos = await response.json();
+            const tbody = document.querySelector('#tablaProductos tbody');
+            tbody.innerHTML = '';
+
+            productos.forEach(producto => {
+                const fila = document.createElement('tr');
+
+                fila.innerHTML = `
+                    <td>${producto.nombredelProducto}</td>
+                    <td><img src="${producto.urlImagen}" alt="${producto.nombredelProducto}" width="80"></td>
+                    <td>$${producto.precioUnitario.toFixed(2)}</td>
+                    <td>${producto.categoria}</td>
+                    <td>${producto.largo}</td>
+                    <td>${producto.ancho}</td>
+                    <td>${producto.alto}</td>
+                    <td>${producto.tipoMadera}</td>
+                    <td>${producto.tipoAcabado}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm me-2" onclick="editarProducto(${producto.idProducto})">Editar</button>
+                        <button class="btn btn-danger btn-sm" onclick="borrarProducto(${producto.idProducto}, this)">Eliminar</button>
+                    </td>
+                `;
+                tbody.appendChild(fila);
+            });
+        } catch (error) {
+            console.error("Error en cargarProductosTabla:", error);
+            alert('Hubo un problema al cargar los productos: ' + error.message);
+        }
+    }
+
+    // 🔹 Función para abrir el modal de edición y cargar los datos
+    // Función para abrir el modal y cargar los datos del producto
+    async function editarProducto(idProducto) {
+        try {
+            const res = await fetch(`http://localhost:5038/api/Producto/${idProducto}`);
+            if (!res.ok) throw new Error("Error al obtener el producto");
+
+            const producto = await res.json();
+
+            // ⚡ Asignar IDs a inputs ocultos
+            document.getElementById("idEditar").value = producto.idProducto;
+            document.getElementById("idDetallesdeProductoEditar").value = producto.idDetallesdeProducto;
+
+            // Rellenar campos visibles
+            document.getElementById("nombreEditar").value = producto.nombredelProducto;
+            document.getElementById("precioEditar").value = producto.precioUnitario;
+            document.getElementById("largoEditar").value = producto.largo;
+            document.getElementById("anchoEditar").value = producto.ancho;
+            document.getElementById("altoEditar").value = producto.alto;
+            document.getElementById("categoriaEditar").value = producto.idCategoria;
+            document.getElementById("tipoProductoEditar").value = producto.idTipodeProducto;
+            document.getElementById("maderaEditar").value = producto.idTipodeMadera;
+            document.getElementById("acabadoEditar").value = producto.idTipodeAcabado;
+
+            document.getElementById("imagenPreviewEditar").src = producto.urlImagen;
+
+            // Abrir modal
+            const modalEl = document.getElementById("productoModalEditar");
+            new bootstrap.Modal(modalEl).show();
+
+        } catch (error) {
+            console.error("Error al cargar producto para edición:", error);
+            alert(error.message);
+        }
+    }
+
+    // Función para guardar los cambios
+    async function guardarActualizacionProducto() {
+        const idProducto = parseInt(document.getElementById("idEditar").value);
+        const idDetalles = parseInt(document.getElementById("idDetallesdeProductoEditar").value);
+
+        console.log("IDs antes de enviar:", idProducto, idDetalles);
+
+        if (!idProducto || !idDetalles) {
+            alert("Error: IDs del producto o detalles inválidos.");
+            return;
+        }
+
+        let urlImagen = document.getElementById("imagenPreviewEditar").src;
+        const fileInput = document.getElementById("imagenEditar");
+
+        if (fileInput.files.length > 0) {
+            // ⚡ Subir nueva imagen si seleccionó archivo
+            try {
+                urlImagen = await subirImagenCloudinary(fileInput.files[0]);
+                console.log("Imagen subida a Cloudinary:", urlImagen);
+            } catch (err) {
+                console.error("Error al subir imagen:", err);
+                alert("No se pudo subir la imagen.");
+                return;
+            }
+        }
+
+        const dto = {
+            Id: idProducto,
+            NombredelProducto: document.getElementById("nombreEditar").value,
+            PrecioUnitario: parseFloat(document.getElementById("precioEditar").value),
+            URLImagen: urlImagen,
+            IdCategoria: parseInt(document.getElementById("categoriaEditar").value),
+            IdDetallesdeProducto: idDetalles,
+            Largo: parseFloat(document.getElementById("largoEditar").value),
+            Ancho: parseFloat(document.getElementById("anchoEditar").value),
+            Alto: parseFloat(document.getElementById("altoEditar").value),
+            IdTipodeProducto: parseInt(document.getElementById("tipoProductoEditar").value),
+            IdTipodeMadera: parseInt(document.getElementById("maderaEditar").value),
+            IdTipodeAcabado: parseInt(document.getElementById("acabadoEditar").value)
+        };
+
+        console.log("DTO a enviar:", dto);
+
+        try {
+            const response = await fetch("http://localhost:5038/api/Producto/editar", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(dto)
+            });
+
+            if (!response.ok) {
+                const text = await response.text();
+                throw new Error(`Error al actualizar producto: ${response.status} - ${text}`);
+            }
+
+            alert("Producto actualizado correctamente.");
+            /*const modalEl = document.getElementById("productoModalEditar");
+            const modal = bootstrap.Modal.getInstance(modalEl);
+            modal.hide();
+            */
+            cargarProductosTabla();
+        } catch (error) {
+            console.error(error);
+            alert(error.message);
+        }
+    }
+
+
+
+
+    async function subirImagenCloudinary(file) {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "ml_default");
+
+        const res = await fetch(`https://api.cloudinary.com/v1_1/dmayq2mna/image/upload`, {
+            method: "POST",
+            body: formData
+        });
+        const data = await res.json();
+        return data.secure_url;
+    }
+
+    // 🔹 Función para guardar los cambios del producto
+   
+
+    // ---------------------- SUBIR IMAGEN ----------------------
+    
+    // ---------------------- GUARDAR ACTUALIZACIÓN ----------------------
+    
+
+async function subirImagenCloudinary(file) {
+        const url = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", UPLOAD_PRESET);
+
+        const res = await fetch(url, { method: "POST", body: formData });
+        const data = await res.json();
+        return data.secure_url; // URL final
+    }
+// ---------------------- GUARDAR ACTUALIZACIÓN ----------------------
+
+
+
+    // ✅ Borrar producto
+    async function borrarProducto(id, btn) {
+        if (!confirm("¿Seguro que deseas eliminar este producto?")) return;
+        await fetch(`http://localhost:5038/api/Producto/${id}`, { method: "DELETE" });
+        btn.closest("tr").remove();
+    }
+</script>
+
+
+

@@ -1,0 +1,6 @@
+@SanPlacidoAPI_HostAddress = http://localhost:5038
+
+GET {{SanPlacidoAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
